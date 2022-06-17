@@ -1,10 +1,12 @@
 import { async } from "@firebase/util";
 import React, { useState } from "react";
-import {authService} from "fbase";
+import {authService, firebaseInstance} from "fbase";
 import {
     //getAuth,
     signInWithEmailAndPassword,
     createUserWithEmailAndPassword,
+    GithubAuthProvider,
+    GoogleAuthProvider,
     } from 'firebase/auth';
 
 const Auth=() => {
@@ -57,6 +59,15 @@ const Auth=() => {
         const {name, value}= event.target;
 
         console.log(name);
+
+        let provider;
+
+        if (name==="googleLogin"){
+            provider = GithubAuthProvider
+            
+        }else if (name==="githubLogin"){
+
+        }
 
     }
     return (
